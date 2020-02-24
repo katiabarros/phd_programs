@@ -1,0 +1,26 @@
+source solar /home/kmendes/kurudz_1.0nm.dat #per_nm
+atmosphere_file /home/kmendes/afglt.dat
+data_files_path /opt/libradtran/2.0.2/share/libRadtran/data  # basic data
+mol_abs_param reptran coarse
+rte_solver disort
+pseudospherical
+wavelength 591 591
+aerosol_modify ssa scale 0.87		#Scale the single scattering albedo for all wavelengths
+aerosol_modify gg set 0.6			#Scale the aerosol asymmetry factor for all wavelengths
+aerosol_modify tau set 0.00001			#Scale the optical thickness for all wavelengths
+aerosol_vulcan 1 					# Aerosol type above 2km
+aerosol_haze 6 						# Aerosol type below 2km
+aerosol_season 1 					# Summer season
+aerosol_visibility 500.0 			# Visibility
+radiosonde /home/kmendes/ATTO/Radiosoundings/Libradtran_RS_Manaus0918_00.dat H2O RH
+albedo_file /home/kmendes/ATTO/alb_forest.dat
+latitude S 02 08 752
+longitude W 59 00 335
+time 2018 09 17 18 34 00
+altitude 0.130
+phi     359
+umu      -1.0000000    -0.9998477    -0.9993908    -0.9986296    -0.9975642    -0.9961949    -0.9945222    -0.9925466    -0.9902686    -0.9876891    -0.9848086    -0.9816282    -0.9781489    -0.9743716    -0.9702975    -0.9659278    -0.9612640    -0.9563073    -0.9510594    -0.9455218    -0.9396961    -0.9335843    -0.9271881    -0.9205095    -0.9135505    -0.9063132    -0.8987999    -0.8910128    -0.8829544    -0.8746269    -0.8660331    -0.8571755    -0.8480568    -0.8386798    -0.8290474    -0.8191624    -0.8090279    -0.7986470    -0.7880228    -0.7771586    -0.7660577    -0.7547234    -0.7431593    -0.7313688    -0.7193555    -0.7071232    -0.6946754    -0.6820161    -0.6691490    -0.6560780    -0.6428073    -0.6293408    -0.6156825    -0.6018368    -0.5878077    -0.5735996    -0.5592168    -0.5446637    -0.5299446    -0.5150641    -0.5000268    -0.4848371    -0.4694997    -0.4540194    -0.4384007    -0.4226486    -0.4067677    -0.3907629    -0.3746391    -0.3584011    -0.3420540    -0.3256027    -0.3090522    -0.2924076    -0.2756740    -0.2588563    -0.2419599    -0.2249897    -0.2079510    -0.1908489    -0.1736887    -0.1564756    -0.1392149    -0.1219117    -0.1045715    -0.0871993    -0.0698006    -0.0523807    -0.0349448    -0.0174982
+zout 0.127	#sensor altitude above the ground
+output_process per_nm
+output_user uu
+verbose
